@@ -301,7 +301,7 @@ var Authentication = (function () {
             first_name: userInfo.first_name,
             last_name: userInfo.last_name
         });
-        return this.http.post(config_1.KINVEY_BASE_URL + 'user/kid1781/', params, {
+        return this.http.post(config_1.KINVEY_BASE_URL + 'user/kid_ZJBVZWhQWW/', params, {
             headers: new http_1.Headers({
                 'Content-Type': 'application/json',
                 'Authorization': 'Basic ' + config_1.KINVEY_AUTH,
@@ -321,7 +321,7 @@ var Authentication = (function () {
             username: username,
             password: password
         });
-        return this.http.post(config_1.KINVEY_BASE_URL + 'user/kid1781/login', params, {
+        return this.http.post(config_1.KINVEY_BASE_URL + 'user/kid_ZJBVZWhQWW/login', params, {
             headers: new http_1.Headers({
                 'Content-Type': 'application/json',
                 'Authorization': 'Basic ' + config_1.KINVEY_AUTH,
@@ -339,7 +339,7 @@ var Authentication = (function () {
     Authentication.prototype.logout = function () {
         var _this = this;
         var params = JSON.stringify({});
-        return this.http.post(config_1.KINVEY_BASE_URL + 'user/kid1781/_logout', params, {
+        return this.http.post(config_1.KINVEY_BASE_URL + 'user/kid_ZJBVZWhQWW/_logout', params, {
             headers: new http_1.Headers({
                 'Content-Type': 'application/json',
                 'Authorization': 'Kinvey ' + this.token,
@@ -363,8 +363,8 @@ exports.Authentication = Authentication;
 },{"./config":7,"angular2/core":11,"angular2/http":12,"rxjs/RX":417}],7:[function(require,module,exports){
 "use strict";
 exports.KINVEY_BASE_URL = "https://baas.kinvey.com/";
-var appKey = "kid1781";
-var secretKey = "cb8b0da543e248e5a5ec9ab265cff1f2";
+var appKey = "kid_ZJBVZWhQWW";
+var secretKey = "257214c29a79441d820dddd5a1ec2713";
 exports.KINVEY_AUTH = btoa(appKey + ':' + secretKey);
 
 },{}],8:[function(require,module,exports){
@@ -405,13 +405,13 @@ var ToDoService = (function () {
     ToDoService.prototype._uploadPhotoUsingGoogleURL = function (_data, _imageData, _size) {
         try {
             var url = _data._uploadURL;
-            var headers = new http_1.Headers(_data._requiredHeaders);
+            var headers = new window.Headers(_data._requiredHeaders);
             headers.append("Content-Type", "image/png");
             headers.append("Content-Length", _size);
             console.log(_imageData);
             return fetch(url, {
                 method: "PUT",
-                headers: headers.toJSON(),
+                headers: headers,
                 body: _imageData
             }).then(function (_result) {
                 console.log("fetch: ", _result);
@@ -436,7 +436,7 @@ var ToDoService = (function () {
     ToDoService.prototype._uploadPhotoToKinvey = function (_imageData, _size) {
         var that = this;
         try {
-            var headers = new http_1.Headers();
+            var headers = new window.Headers();
             headers.append('Content-Type', 'application/json');
             headers.append('X-Kinvey-API-Version', '3');
             headers.append('Authorization', 'Kinvey ' + this.token);
@@ -447,9 +447,9 @@ var ToDoService = (function () {
                 "size": _size,
                 "mimeType": "image/png"
             });
-            return fetch('https://baas.kinvey.com/blob/kid1781', {
+            return fetch('https://baas.kinvey.com/blob/kid_ZJBVZWhQWW', {
                 method: "POST",
-                headers: headers.toJSON(),
+                headers: headers,
                 body: params
             }).then(function (_result) {
                 return _result.json();
@@ -514,7 +514,7 @@ var ToDoService = (function () {
             quality: 50,
             destinationType: 1,
             sourceType: 0,
-            encodingType: 1 // Camera.EncodingType.PNG        
+            encodingType: 1 // Camera.EncodingType.PNG
         };
         ionic_native_1.Camera.getPicture(options).then(function (imageURI) {
             resolveLocalFileSystemURL(imageURI, function (_file) {
@@ -534,7 +534,7 @@ var ToDoService = (function () {
         });
     };
     ToDoService.prototype.addItem = function (_item) {
-        var url = config_1.KINVEY_BASE_URL + 'appdata/kid1781/todo-collection';
+        var url = config_1.KINVEY_BASE_URL + 'appdata/kid_ZJBVZWhQWW/todo-collection';
         var params = JSON.stringify(_item);
         return this.http.post(url, params, {
             headers: new http_1.Headers({
@@ -549,7 +549,7 @@ var ToDoService = (function () {
         });
     };
     ToDoService.prototype.getAllImages = function () {
-        return this.http.get(config_1.KINVEY_BASE_URL + 'blob/kid1781', {
+        return this.http.get(config_1.KINVEY_BASE_URL + 'blob/kid_ZJBVZWhQWW', {
             headers: new http_1.Headers({
                 'Content-Type': 'application/json',
                 'Authorization': 'Kinvey ' + this.token,
@@ -562,7 +562,7 @@ var ToDoService = (function () {
         });
     };
     ToDoService.prototype.getAllItems = function () {
-        return this.http.get(config_1.KINVEY_BASE_URL + 'appdata/kid1781/todo-collection', {
+        return this.http.get(config_1.KINVEY_BASE_URL + 'appdata/kid_ZJBVZWhQWW/todo-collection', {
             headers: new http_1.Headers({
                 'Content-Type': 'application/json',
                 'Authorization': 'Kinvey ' + this.token,

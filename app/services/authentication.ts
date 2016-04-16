@@ -21,7 +21,7 @@ export class Authentication {
       first_name : userInfo.first_name,
       last_name : userInfo.last_name
     });
-    return this.http.post(KINVEY_BASE_URL + 'user/kid1781/', params, {
+    return this.http.post(KINVEY_BASE_URL + 'user/kid_ZJBVZWhQWW/', params, {
       headers: new Headers({
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + KINVEY_AUTH,
@@ -42,7 +42,7 @@ export class Authentication {
       username: username,
       password: password
     });
-    return this.http.post(KINVEY_BASE_URL + 'user/kid1781/login', params, {
+    return this.http.post(KINVEY_BASE_URL + 'user/kid_ZJBVZWhQWW/login', params, {
       headers: new Headers({
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + KINVEY_AUTH,
@@ -59,7 +59,7 @@ export class Authentication {
 
   logout() {
     let params = JSON.stringify({});
-     return this.http.post(KINVEY_BASE_URL + 'user/kid1781/_logout', params, {
+     return this.http.post(KINVEY_BASE_URL + 'user/kid_ZJBVZWhQWW/_logout', params, {
        headers: new Headers({
          'Content-Type': 'application/json',
         'Authorization': 'Kinvey ' + this.token,

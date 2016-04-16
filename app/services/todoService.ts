@@ -77,7 +77,7 @@ export class ToDoService {
                 "mimeType": "image/png"
             })
 
-            return fetch('https://baas.kinvey.com/blob/kid1781', {
+            return fetch('https://baas.kinvey.com/blob/kid_ZJBVZWhQWW', {
                 method: "POST",
                 headers: headers,
                 body: params
@@ -150,7 +150,7 @@ export class ToDoService {
             quality: 50,
             destinationType: 1, // Camera.DestinationType.FILE_URI,
             sourceType: 0,      // Camera.PictureSourceType.PHOTOLIBRARY,
-            encodingType: 1      // Camera.EncodingType.PNG        
+            encodingType: 1      // Camera.EncodingType.PNG
         };
 
         Camera.getPicture(options).then((imageURI) => {
@@ -175,7 +175,7 @@ export class ToDoService {
     }
 
     addItem(_item) {
-        let url = KINVEY_BASE_URL + 'appdata/kid1781/todo-collection'
+        let url = KINVEY_BASE_URL + 'appdata/kid_ZJBVZWhQWW/todo-collection'
         let params = JSON.stringify(_item)
         return this.http.post(url, params, {
             headers: new Headers({
@@ -190,7 +190,7 @@ export class ToDoService {
             });
     }
     getAllImages() {
-        return this.http.get(KINVEY_BASE_URL + 'blob/kid1781', {
+        return this.http.get(KINVEY_BASE_URL + 'blob/kid_ZJBVZWhQWW', {
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': 'Kinvey ' + this.token,
@@ -203,7 +203,7 @@ export class ToDoService {
             });
     }
     getAllItems() {
-        return this.http.get(KINVEY_BASE_URL + 'appdata/kid1781/todo-collection', {
+        return this.http.get(KINVEY_BASE_URL + 'appdata/kid_ZJBVZWhQWW/todo-collection', {
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': 'Kinvey ' + this.token,
