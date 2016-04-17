@@ -7,29 +7,33 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.chronos.project"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.chronos.project"
         },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.chronos.project"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.chronos.project"
         },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "io.ionic.starter"
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.chronos.project"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.chronos.project"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.chronos.project"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.chronos.project"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "630148386673",
+            "PACKAGE_NAME": "com.chronos.project"
         }
     },
     "dependent_plugins": {}

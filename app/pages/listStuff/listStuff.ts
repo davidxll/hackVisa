@@ -47,7 +47,7 @@ export class ListStuffPage {
         () => { console.log("All Good With The Data") }
         );
     }
-    
+
     this.visibleObject = _visibleObject
   }
 

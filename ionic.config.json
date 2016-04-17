@@ -1,6 +1,6 @@
 {
   "name": "kinvey-starter-ionic2",
-  "app_id": "",
+  "app_id": "com.chronos.project",
   "v2": true,
   "typescript": true
 }

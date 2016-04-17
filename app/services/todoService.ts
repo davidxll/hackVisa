@@ -2,8 +2,8 @@
 import {Injectable} from 'angular2/core';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import 'rxjs/RX';
-import  'whatwg-fetch';
-import {Camera, File } from 'ionic-native';
+import 'whatwg-fetch';
+import {Camera, File, Device} from 'ionic-native';
 
 import {KINVEY_BASE_URL, KINVEY_AUTH} from './config';
 
